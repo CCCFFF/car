@@ -1,0 +1,27 @@
+<h1>Listing maintenance_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maintenance_categories.each do |maintenance_category| %>
+      <tr>
+        <td><%= maintenance_category.name %></td>
+        <td><%= link_to 'Show', maintenance_category %></td>
+        <td><%= link_to 'Edit', edit_maintenance_category_path(maintenance_category) %></td>
+        <td><%= link_to 'Destroy', maintenance_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Maintenance category', new_maintenance_category_path %>

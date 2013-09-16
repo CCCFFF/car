@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  year: MyString
+  make: MyString
+  model: MyString
+  category: MyString
+  car_company_id: 1
+
+two:
+  user_id: 1
+  year: MyString
+  make: MyString
+  model: MyString
+  category: MyString
+  car_company_id: 1

@@ -1,0 +1,33 @@
+<h1>Listing maintenances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Maintenance category</th>
+      <th>Date</th>
+      <th>Cost</th>
+      <th>Mileage</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maintenances.each do |maintenance| %>
+      <tr>
+        <td><%= maintenance.maintenance_category_id %></td>
+        <td><%= maintenance.date %></td>
+        <td><%= maintenance.cost %></td>
+        <td><%= maintenance.mileage %></td>
+        <td><%= link_to 'Show', maintenance %></td>
+        <td><%= link_to 'Edit', edit_maintenance_path(maintenance) %></td>
+        <td><%= link_to 'Destroy', maintenance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Maintenance', new_maintenance_path %>
