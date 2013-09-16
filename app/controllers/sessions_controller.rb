@@ -1,7 +1,8 @@
 class SessionController < ApplicationController
 
 	def create
-		if @user.email.present? && @user.authenticate(params[:password])
+		user = User.find_by(:email => params[:email])
+		if user.email.present? && user.password.authenticate(params[:password])
 			session[:user_id] = @user.id
 			flash[:notice] = "Welcome back"
 			redirect_to user_url(@user)
