@@ -1,4 +1,14 @@
 Car::Application.routes.draw do
+
+  #SESSION RESOURCES
+  get "/sessions/new" => "sessions#new", as: "new_session"
+  post "/sessions" => "sessions#create", as: "session"
+  delete "/sessions" => "sessions#destroy"
+
+  #HOMEPAGE RESOURCES
+  root 'home#index'
+
+
   resources :car_categories
 
   resources :maintenance_categories
